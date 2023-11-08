@@ -1,7 +1,9 @@
 
 const userScore = 0;
 const computerScore =0;
-const rockVariations = ["Roc"]
+const rockVariations = ["Rock", "rock", "ROCK", "RoCK", "rocK", "rOck"];
+const scissorsVariatons = ["Scissors", "scissors", "SCISSORS"];
+const paperVariations = ["Paper", "paper", "PAPER"];
 const computerSelection = getComputerChoice();
 
 let playerSelection = prompt("Enter your choice");
