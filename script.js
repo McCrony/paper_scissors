@@ -25,14 +25,25 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
 
     if (rockVariations.includes(playerSelection) && computerSelection === "Scissors") {
-        alert("You Win! Rock beats Scissors" + "Com: " + computerSelection);
-        
-    } else if (scissorsVariatons.includes(playerSelection) && computerSelection === "Paper"){
-       alert("You lose! Rock beats Scissors" + "Com: " + computerSelection)
-    } else if(paperVariations.includes(playerSelection) && computerSelection === "Rock"){
+        alert("You Win! Rock beats Scissors" + "Com: " + computerSelection);   
+    }else if(computerSelection === "Rock" && scissorsVariatons.includes(playerSelection)){
+        alert("Computer wins! Rock beats Scissors " + "Com: " + computerSelection);
+    } 
+    
+    else if (scissorsVariatons.includes(playerSelection) && computerSelection === "Paper"){
+       alert("You Win! Scissors beats Paper" + "Com: " + computerSelection)
+    }else if(computerSelection === "Scissors" && paperVariations.includes(playerSelection)){
+        alert("Computer wins! Scissors beats Paper " + " Com: " + computerSelection);
+    } 
+    
+    else if(paperVariations.includes(playerSelection) && computerSelection === "Rock"){
         alert("You Win! Paper beats Rock" + "Com: " + computerSelection);
-    }else{
-        alert("It's a fair game! " + "Com: " + computerSelection)
+    }else if(computerSelection === "Paper" && rockVariations.includes(playerSelection)){
+        alert("Computer wins! Paper beats Rock " + "Com: " + computerSelection);
+    }
+
+    else{
+        alert("It's a fair game" + "Com: " + computerSelection);
     }
 }
 
