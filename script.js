@@ -8,8 +8,13 @@ const computerSelection = getComputerChoice();
 
 let playerSelection = prompt("Enter your choice");
 
-alert(computerSelection + " " + playerSelection);
+// if(rockVariations.includes(playerSelection)){
+// alert("Your input is " + playerSelection);
+// }else{
+//     alert("didn't work bro");
+// };
 
+game();
 
 function getComputerChoice(){
     const compOptions = ["Rock", "Paper" , "Scissors"];
@@ -19,13 +24,15 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
 
-    if (playerSelection === "Rock" && computerSelection === "Scissors") {
-        console.log("You Win! Rock beats Scissors" + "Com: " + computerSelection);
+    if (rockVariations.includes(playerSelection) && computerSelection === "Scissors") {
+        alert("You Win! Rock beats Scissors" + "Com: " + computerSelection);
         
-    } else if (playerSelection === "Rock" && computerSelection === "Rock"){
-       console.log("You lose! Rock beats Scissors")
-    } else{
-        console.log("Nothing happens");
+    } else if (scissorsVariatons.includes(playerSelection) && computerSelection === "Paper"){
+       alert("You lose! Rock beats Scissors" + "Com: " + computerSelection)
+    } else if(paperVariations.includes(playerSelection) && computerSelection === "Rock"){
+        alert("You Win! Paper beats Rock" + "Com: " + computerSelection);
+    }else{
+        alert("It's a fair game! " + "Com: " + computerSelection)
     }
 }
 
@@ -34,6 +41,6 @@ function game(){
     playRound(playerSelection, computerSelection);
 }
 
-for(let a = 0; a <=4; a++){
-    game();
-}
+// for(let a = 0; a <=4; a++){
+//     game();
+// }
