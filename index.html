@@ -4,9 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paper and Rock</title>
-    <script src="script.js"></script>
+    <script src="script.jss"></script>
+    <style>
+
+        *{
+            font-family:'Courier New', Courier, monospace;
+        }
+        body{
+            background-color: bisque;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .info{
+            width: 30vw;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: burlywood;
+            border-radius: 8px;
+            border-bottom: 3px solid rgb(143, 113, 73);
+            box-shadow: 5px 5px 10px rgb(73, 79, 82);
+            transition: width 1.5s, height 1.5s;
+        }
+
+        .info:hover{
+            width: 40vw;
+            height: 40vh;
+        }
+
+        
+    </style>
 </head>
 <body>
-
+    <h3> ROCK PAPER SCISSOR GAME </h3>
+    <div class="info">
+        <button> START</button>
+    </div>
 </body>
 </html>
