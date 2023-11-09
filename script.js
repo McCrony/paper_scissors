@@ -2,7 +2,7 @@
 let playerScore = 0;
 let computerScore =0;
 const rockVariations = ["Rock", "rock", "ROCK", "RoCK", "rocK", "rOck"];
-const scissorsVariatons = ["Scissors", "scissors", "SCISSORS"];
+const scissorsVariatons = ["Scissors", "scissors", "SCISSORS", "scissor", "Scissor", "SCISSOR"];
 const paperVariations = ["Paper", "paper", "PAPER"];
 let computerSelection = getComputerChoice();
 
