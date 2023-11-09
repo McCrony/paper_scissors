@@ -6,10 +6,11 @@ const scissorsVariatons = ["Scissors", "scissors", "SCISSORS"];
 const paperVariations = ["Paper", "paper", "PAPER"];
 let computerSelection = getComputerChoice();
 
-let playerSelection = prompt("Enter your choice");
+for(let a =0; a<=4; a++){
+    game();
+};
 
-
-game();
+getResults();
 
 
 
@@ -21,10 +22,9 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
    
-
     if (rockVariations.includes(playerSelection) && computerSelection === "Scissors") {
         alert("You Win! Rock beats Scissors" + "Com: " + computerSelection);
-        alert("Your score: " + playerScore++ + "Com Score: " + computerScore++);  
+        alert("Your score: " + playerScore++ + "Com Score: " + computerScore);  
     }else if(computerSelection === "Rock" && scissorsVariatons.includes(playerSelection)){
         alert("Computer wins! Rock beats Scissors " + "Com: " + computerSelection);
         alert("Your score: " + playerScore + "Com Score: " + computerScore++);
@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection){
        alert("Your score: " + playerScore++ + "Com Score: " + computerScore);  
     }else if(computerSelection === "Scissors" && paperVariations.includes(playerSelection)){
         alert("Computer wins! Scissors beats Paper " + " Com: " + computerSelection);
-        alert("Your score: " + playerScore++ + "Com Score: " + computerScore);  
+        alert("Your score: " + playerScore + "Com Score: " + computerScore++);  
     } 
     
     else if(paperVariations.includes(playerSelection) && computerSelection === "Rock"){
@@ -43,12 +43,12 @@ function playRound(playerSelection, computerSelection){
         alert("Your score: " + playerScore++ + "Com Score: " + computerScore);  
     }else if(computerSelection === "Paper" && rockVariations.includes(playerSelection)){
         alert("Computer wins! Paper beats Rock " + "Com: " + computerSelection);
-        alert("Your score: " + playerScore++ + "Com Score: " + computerScore);  
+        alert("Your score: " + playerScore + "Com Score: " + computerScore++);  
     }
 
     else{
         alert("It's a fair game" + "Com: " + computerSelection);
-        alert("Your score: " + playerScore++ + "Com Score: " + computerScore);  
+        alert("Your score: " + playerScore + "Com Score: " + computerScore);  
     }
     // alert("Your score: " + playerScore + " : " + "Computer Score: " + computerScore);
 
@@ -56,6 +56,9 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
+
+    let playerSelection = prompt("Enter your choice");
+
     playRound(playerSelection, computerSelection);
 }
 
