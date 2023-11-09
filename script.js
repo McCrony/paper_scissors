@@ -6,7 +6,7 @@ const scissorsVariatons = ["Scissors", "scissors", "SCISSORS"];
 const paperVariations = ["Paper", "paper", "PAPER"];
 const computerSelection = getComputerChoice();
 
-let playerSelection = prompt("Enter your choice");
+
 
 game();
 
@@ -18,9 +18,11 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
 
+    let playerSelection = prompt("Enter your choice");
+
     if (rockVariations.includes(playerSelection) && computerSelection === "Scissors") {
         alert("You Win! Rock beats Scissors" + "Com: " + computerSelection);   
-        alert(playerScore++);
+        alert( "Your score: " + playerScore++);
     }else if(computerSelection === "Rock" && scissorsVariatons.includes(playerSelection)){
         alert("Computer wins! Rock beats Scissors " + "Com: " + computerSelection);
         computerScore++;
