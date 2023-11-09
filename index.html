@@ -22,10 +22,14 @@
         }
 
         button{
-            padding: 10px;
-            background-color: rgb(247, 180, 99);
-            border: 1px solid bisque;
+            padding: 20px 50px;
+            background-color: rgb(238, 159, 63);
+            border: 1px solid rgb(143, 98, 44);
             border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 500;
+            color: bisque;
         }
 
         button:hover{
@@ -37,26 +41,38 @@
             width: 30vw;
             height: 30vh;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
+            flex-direction: column;
             background: burlywood;
             border-radius: 8px;
             border-bottom: 3px solid rgb(143, 113, 73);
-            box-shadow: 5px 5px 10px rgb(73, 79, 82);
+            box-shadow: 3px 3px 3px rgb(73, 79, 82);
             transition: width 1.5s, height 1.5s;
         }
 
         .info:hover{
-            width: 35vw;
-            height: 35vh;
+            width: 33vw;
+            height: 33vh;
         }
-
+        
+        .rules{
+            display: flex;
+        }
 
     </style>
 </head>
 <body>
     <h3> ROCK PAPER SCISSOR GAME </h3>
     <div class="info">
+        <div class="rules">
+            <h2>Rules</h2>
+            <ul>
+                <li>Rock beats Scissors</li>
+                <li>Paper beats Rock</li>
+                <li> Scissors beats Paper</li>
+            </ul>    
+        </div>
         <button onclick="start()"> START</button>
     </div>
 </body>
