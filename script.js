@@ -5,10 +5,12 @@ let playerSelection;
 const rockVariations = ["Rock", "rock", "ROCK", "RoCK", "rocK", "rOck"];
 const scissorsVariatons = ["Scissors", "scissors", "SCISSORS", "scissor", "Scissor", "SCISSOR"];
 const paperVariations = ["Paper", "paper", "PAPER"];
-let computerSelection = getComputerChoice();
+let computerSelection;
 
 for(let a =0; a<=4; a++){
+    computerSelection
     game();
+    // alert(computerSelection);
 };
 
 getResults();
@@ -16,7 +18,7 @@ getResults();
 
 
 function getComputerChoice(){
-    const compOptions = ["Rock", "Paper" , "Scissors"];
+    const compOptions = ["Rock", "Scissors" , "Paper"];
     const compChoice = Math.floor(Math.random() * compOptions.length);
     return compOptions[compChoice]
 }
@@ -53,7 +55,8 @@ function playRound(playerSelection, computerSelection){
 
 
 function game(){
-    playerSelection = prompt("Enter your choice");
+    playerSelection = prompt("Enter your choice : Rock | Scissors | Paper");
+    computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
 }
 
@@ -69,12 +72,12 @@ function getResults(){
 
 function userWinAlert(){
     playerScore++ ;
-    alert("You Win! " + playerSelection + " beats " + computerSelection + " Com: " + computerSelection);
+    alert("You Won! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + " Com: " + computerSelection);
     alert("Your score: " + playerScore + " Com Score: " + computerScore);  
 }
 
 function computerWinAlert(){
     computerScore++;
-    alert("Computer wins! " + computerSelection +  " beats " + playerSelection + " Com: " + computerSelection);
+    alert("Computer Won! " + computerSelection.toUpperCase() +  " beats " + playerSelection.toUpperCase() + " Com: " + computerSelection);
     alert("Your score: " + playerScore + " Com Score: " + computerScore);
 }
