@@ -7,15 +7,16 @@ const scissorsVariatons = ["Scissors", "scissors", "SCISSORS", "scissor", "Sciss
 const paperVariations = ["Paper", "paper", "PAPER"];
 let computerSelection;
 
-for(let a =0; a<=4; a++){
-    computerSelection
-    game();
-    // alert(computerSelection);
-};
 
-getResults();
-
-
+function start(){
+    for(let a =0; a<=4; a++){
+        computerSelection
+        game();
+        // alert(computerSelection);
+    };
+    
+    getResults();
+}
 
 function getComputerChoice(){
     const compOptions = ["Rock", "Scissors" , "Paper"];
