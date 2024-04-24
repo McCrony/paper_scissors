@@ -10,8 +10,8 @@ const paper = document.querySelector('.paperBtn');
 const scissors = document.querySelector('.scissorsBtn');
 const infoDiv = document.querySelector('.info');
 const displayParagraph = document.createElement('p');
-const compScore = document.querySelector('.computerScore');
-const playScore = document.querySelector(".playerScore");
+const compScore = document.querySelector('#computerScore');
+const playScore = document.querySelector("#playerScore");
 
 
 infoDiv.appendChild(displayParagraph);
@@ -21,7 +21,7 @@ infoDiv.appendChild(displayParagraph);
 rock.addEventListener('click', () => {
     playerSelection = "ROCK"
     game();
-    // playCounter++;
+    playCounter++;
 });
 
 paper.addEventListener('click', () => {
@@ -69,10 +69,6 @@ function playRound(playerSelection, computerSelection){
     else{
        // alert("It's a fair game " + "Com: " + computerSelection);
         displayParagraph.textContent= `Fair Game! ${playerSelection} matches ${computerSelection}`;
-        playScore.textContent = ` ${playerScore}`;
-        compScore.textContent = `${computerScore}`;
-
-        //alert("Your score: " + playerScore + " Com Score: " + computerScore);  
     }
 }
 
@@ -86,16 +82,14 @@ function game(){
 function userWinAlert(){
     playerScore++ ;
     displayParagraph.textContent= `You Won! ${playerSelection} beats ${computerSelection}`;
-    //alert("Your score: " + playerScore + " Com Score: " + computerScore);  
-    playScore.textContent = ` ${playerScore}`;
+    playScore.textContent = ` Your score: ${playerScore}`;
 }
 
 //COMPUTER WIN ALERT
 function computerWinAlert(){
     computerScore++;
     displayParagraph.textContent= `Computer Won! ${computerSelection} beats ${playerSelection}`;
-    //alert("Your score: " + playerScore + " Com Score: " + computerScore);
-    compScore.textContent = `${computerScore}`;
+    compScore.textContent = `Computer Score: ${computerScore}`;
 }
 
 //FINAL RESULTS 
