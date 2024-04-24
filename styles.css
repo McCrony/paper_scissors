@@ -16,13 +16,13 @@ body{
 }
 
 button{
-    padding: 20px;
+    padding: 10px;
     background-color: rgb(238, 159, 63);
     border: 1px solid rgb(143, 98, 44);
     border-radius: 8px;
     cursor: pointer;
     font-size: 20px;
-    color: bisque;
+    color: rgb(3, 3, 3);
     flex-shrink: 1;
 }
 

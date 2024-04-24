@@ -1,39 +1,43 @@
 
 let playerScore = 0;
 let computerScore =0;
+let playCounter=0;
 let playerSelection;
 let computerSelection;
 
-
 const rock = document.querySelector(".rockBtn");
+const paper = document.querySelector('.paperBtn');
+const scissors = document.querySelector('.scissorsBtn');
+const infoDiv = document.querySelector('.info');
+const displayParagraph = document.createElement('p');
+const compScore = document.querySelector('.computerScore');
+const playScore = document.querySelector(".playerScore");
+
+
+infoDiv.appendChild(displayParagraph);
+
+
+//BUTTONS EVENT LISTNERS 
 rock.addEventListener('click', () => {
     playerSelection = "ROCK"
     game();
+    // playCounter++;
 });
 
-const paper = document.querySelector('.paperBtn');
 paper.addEventListener('click', () => {
     playerSelection = "PAPER";
     game();
+    playCounter++;
 })
 
-const scissors = document.querySelector('.scissorsBtn');
 scissors.addEventListener('click', () => {
     playerSelection = "SCISSORS";
     game();
+    playCounter++;
 })
 
-// function start(){
-//     for(let a =0; a<=4; a++){
-//         computerSelection
-//         game();
-//     };
-    
-//     getResults();
-// }
-
 function getComputerChoice(){
-    const compOptions = ["Rock", "Scissors" , "Paper"];
+    const compOptions = ["ROCK", "SCISSORS" , "PAPER"];
     const compChoice = Math.floor(Math.random() * compOptions.length);
     return compOptions[compChoice]
 }
@@ -42,29 +46,33 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
    
     // ROCK BEATS SCISSORS
-    if (playerSelection == "ROCK" && computerSelection === "Scissors") {
+    if (playerSelection == "ROCK" && computerSelection === "SCISSORS") {
             userWinAlert();
-    }else if(computerSelection === "Rock" && playerSelection == "SCISSORS"){
+    }else if(computerSelection === "ROCK" && playerSelection == "SCISSORS"){
             computerWinAlert();
     } 
     
     // SCISSORS BEAT PAPER
-    else if (playerSelection== "SCISSORS" && computerSelection === "Paper"){
+    else if (playerSelection== "SCISSORS" && computerSelection === "PAPER"){
             userWinAlert();
-    }else if(computerSelection === "Scissors" && playerSelection == "PAPER"){
+    }else if(computerSelection === "SCISSORS" && playerSelection == "PAPER"){
         computerWinAlert();
     } 
     
     // PAPER BEAT ROCK
-    else if(playerSelection== "PAPER" && computerSelection === "Rock"){
+    else if(playerSelection== "PAPER" && computerSelection === "ROCK"){
         userWinAlert();
-    }else if(computerSelection === "Paper" && playerSelection== "ROCK"){
+    }else if(computerSelection === "PAPER" && playerSelection== "ROCK"){
         computerWinAlert();
     }
 
     else{
-        alert("It's a fair game " + "Com: " + computerSelection);
-        alert("Your score: " + playerScore + " Com Score: " + computerScore);  
+       // alert("It's a fair game " + "Com: " + computerSelection);
+        displayParagraph.textContent= `Fair Game! ${playerSelection} matches ${computerSelection}`;
+        playScore.textContent = ` ${playerScore}`;
+        compScore.textContent = `${computerScore}`;
+
+        //alert("Your score: " + playerScore + " Com Score: " + computerScore);  
     }
 }
 
@@ -77,15 +85,17 @@ function game(){
 //USER WIN ALERT 
 function userWinAlert(){
     playerScore++ ;
-    alert("You Won! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + " Com: " + computerSelection);
-    alert("Your score: " + playerScore + " Com Score: " + computerScore);  
+    displayParagraph.textContent= `You Won! ${playerSelection} beats ${computerSelection}`;
+    //alert("Your score: " + playerScore + " Com Score: " + computerScore);  
+    playScore.textContent = ` ${playerScore}`;
 }
 
 //COMPUTER WIN ALERT
 function computerWinAlert(){
     computerScore++;
-    alert("Computer Won! " + computerSelection.toUpperCase() +  " beats " + playerSelection.toUpperCase() + " Com: " + computerSelection);
-    alert("Your score: " + playerScore + " Com Score: " + computerScore);
+    displayParagraph.textContent= `Computer Won! ${computerSelection} beats ${playerSelection}`;
+    //alert("Your score: " + playerScore + " Com Score: " + computerScore);
+    compScore.textContent = `${computerScore}`;
 }
 
 //FINAL RESULTS 
