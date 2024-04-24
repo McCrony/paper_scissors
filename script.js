@@ -2,21 +2,35 @@
 let playerScore = 0;
 let computerScore =0;
 let playerSelection;
-const rockVariations = ["Rock", "rock", "ROCK", "RoCK", "rocK", "rOck"];
-const scissorsVariatons = ["Scissors", "scissors", "SCISSORS", "scissor", "Scissor", "SCISSOR"];
-const paperVariations = ["Paper", "paper", "PAPER"];
 let computerSelection;
 
 
-function start(){
-    for(let a =0; a<=4; a++){
-        computerSelection
-        game();
-        // alert(computerSelection);
-    };
+const rock = document.querySelector(".rockBtn");
+rock.addEventListener('click', () => {
+    playerSelection = "ROCK"
+    game();
+});
+
+const paper = document.querySelector('.paperBtn');
+paper.addEventListener('click', () => {
+    playerSelection = "PAPER";
+    game();
+})
+
+const scissors = document.querySelector('.scissorsBtn');
+scissors.addEventListener('click', () => {
+    playerSelection = "SCISSORS";
+    game();
+})
+
+// function start(){
+//     for(let a =0; a<=4; a++){
+//         computerSelection
+//         game();
+//     };
     
-    getResults();
-}
+//     getResults();
+// }
 
 function getComputerChoice(){
     const compOptions = ["Rock", "Scissors" , "Paper"];
@@ -28,23 +42,23 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
    
     // ROCK BEATS SCISSORS
-    if (rockVariations.includes(playerSelection) && computerSelection === "Scissors") {
+    if (playerSelection == "ROCK" && computerSelection === "Scissors") {
             userWinAlert();
-    }else if(computerSelection === "Rock" && scissorsVariatons.includes(playerSelection)){
+    }else if(computerSelection === "Rock" && playerSelection == "SCISSORS"){
             computerWinAlert();
     } 
     
     // SCISSORS BEAT PAPER
-    else if (scissorsVariatons.includes(playerSelection) && computerSelection === "Paper"){
+    else if (playerSelection== "SCISSORS" && computerSelection === "Paper"){
             userWinAlert();
-    }else if(computerSelection === "Scissors" && paperVariations.includes(playerSelection)){
+    }else if(computerSelection === "Scissors" && playerSelection == "PAPER"){
         computerWinAlert();
     } 
     
     // PAPER BEAT ROCK
-    else if(paperVariations.includes(playerSelection) && computerSelection === "Rock"){
+    else if(playerSelection== "PAPER" && computerSelection === "Rock"){
         userWinAlert();
-    }else if(computerSelection === "Paper" && rockVariations.includes(playerSelection)){
+    }else if(computerSelection === "Paper" && playerSelection== "ROCK"){
         computerWinAlert();
     }
 
@@ -54,13 +68,27 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-
+//GAME PLAY
 function game(){
-    playerSelection = prompt("Enter your choice : Rock | Scissors | Paper");
     computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
 }
 
+//USER WIN ALERT 
+function userWinAlert(){
+    playerScore++ ;
+    alert("You Won! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + " Com: " + computerSelection);
+    alert("Your score: " + playerScore + " Com Score: " + computerScore);  
+}
+
+//COMPUTER WIN ALERT
+function computerWinAlert(){
+    computerScore++;
+    alert("Computer Won! " + computerSelection.toUpperCase() +  " beats " + playerSelection.toUpperCase() + " Com: " + computerSelection);
+    alert("Your score: " + playerScore + " Com Score: " + computerScore);
+}
+
+//FINAL RESULTS 
 function getResults(){
     if(playerScore>computerScore){
         alert("You won the game with " + playerScore + " Score")
@@ -69,16 +97,4 @@ function getResults(){
     }else{
         alert("You lose! Computer won with " + computerScore);
     }
-}
-
-function userWinAlert(){
-    playerScore++ ;
-    alert("You Won! " + playerSelection.toUpperCase() + " beats " + computerSelection.toUpperCase() + " Com: " + computerSelection);
-    alert("Your score: " + playerScore + " Com Score: " + computerScore);  
-}
-
-function computerWinAlert(){
-    computerScore++;
-    alert("Computer Won! " + computerSelection.toUpperCase() +  " beats " + playerSelection.toUpperCase() + " Com: " + computerSelection);
-    alert("Your score: " + playerScore + " Com Score: " + computerScore);
 }
