@@ -76,11 +76,11 @@ function playRound(playerSelection, computerSelection){
 //GAME PLAY
 function game(){
     if (computerScore == 5 ) {
-        displayParagraph.textContent= `COMPUTER WINS THIS ROUND`;
+        alert("COMPUTER WINS THIS ROUND");
         computerScore = 0;
         playerScore = 0;
     } else if (playerScore == 5){
-        displayParagraph.textContent= `YOU WON THIS ROUND`;
+        alert("YOU WON THIS ROUND");
         computerScore = 0;
         playerScore = 0;
 
