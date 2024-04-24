@@ -13,13 +13,13 @@ const displayParagraph = document.createElement('p');
 const compScore = document.querySelector('#computerScore');
 const playScore = document.querySelector("#playerScore");
 
-
 infoDiv.appendChild(displayParagraph);
 
 
 //BUTTONS EVENT LISTNERS 
 rock.addEventListener('click', () => {
     playerSelection = "ROCK"
+    // getResults();
     game();
     playCounter++;
 });
@@ -65,23 +65,36 @@ function playRound(playerSelection, computerSelection){
     }else if(computerSelection === "PAPER" && playerSelection== "ROCK"){
         computerWinAlert();
     }
-
+    
     else{
-       // alert("It's a fair game " + "Com: " + computerSelection);
         displayParagraph.textContent= `Fair Game! ${playerSelection} matches ${computerSelection}`;
+        compScore.textContent = `Computer Score: ${computerScore}`;
+        playScore.textContent = ` Your score: ${playerScore}`; 
     }
 }
 
 //GAME PLAY
 function game(){
-    computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
+    if (computerScore == 5 ) {
+        displayParagraph.textContent= `COMPUTER WINS THIS ROUND`;
+        computerScore = 0;
+        playerScore = 0;
+    } else if (playerScore == 5){
+        displayParagraph.textContent= `YOU WON THIS ROUND`;
+        computerScore = 0;
+        playerScore = 0;
+
+    } else{
+        computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+    }
 }
 
 //USER WIN ALERT 
 function userWinAlert(){
     playerScore++ ;
     displayParagraph.textContent= `You Won! ${playerSelection} beats ${computerSelection}`;
+    compScore.textContent = `Computer Score: ${computerScore}`;
     playScore.textContent = ` Your score: ${playerScore}`;
 }
 
@@ -90,15 +103,16 @@ function computerWinAlert(){
     computerScore++;
     displayParagraph.textContent= `Computer Won! ${computerSelection} beats ${playerSelection}`;
     compScore.textContent = `Computer Score: ${computerScore}`;
+    playScore.textContent = ` Your score: ${playerScore}`;
 }
 
 //FINAL RESULTS 
 function getResults(){
-    if(playerScore>computerScore){
+    if(playerScore == 5){
         alert("You won the game with " + playerScore + " Score")
-    }else if (playerScore==computerScore){
-        alert("No winner declared")
-    }else{
-        alert("You lose! Computer won with " + computerScore);
+    }else if (computerScore == 5){
+        alert("Computer won the game with " + computerScore + " Score")
+    }else  {
+        game();
     }
 }
