@@ -18,9 +18,16 @@ body{
     gap: 20px;
 }
 
+p{
+    font-family: "Caveat Brush", cursive;
+    font-size: 30px;
+}
+
 .playButtons{
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
+    flex: initial;
 }
 
 .playButton{
@@ -31,6 +38,8 @@ body{
 }
 
 img{
+    width: auto;
+    height: auto;
     border-radius: 10px;
     flex-shrink: 1;
 }
