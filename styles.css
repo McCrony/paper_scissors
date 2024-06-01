@@ -15,18 +15,32 @@ body{
     gap: 20px;
 }
 
-button{
-    padding: 10px;
-    background-color: rgb(238, 159, 63);
-    border: 1px solid rgb(143, 98, 44);
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 20px;
-    color: rgb(3, 3, 3);
+.playButtons{
+    display: flex;
+    gap: 15px;
+}
+
+.playButton{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    border-radius: 10px;
     flex-shrink: 1;
 }
 
-button:hover{
+button, img{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    /* color: rgb(3, 3, 3); */
+}
+
+button:hover, img:hover{
     box-shadow: 3px 3px 5px rgb(73, 79, 82);
 }
 

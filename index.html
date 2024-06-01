@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paper and Rock</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h3> ROCK PAPER SCISSOR GAME </h3>
-    <div class="info">
-        <div class="rules">
-            <h2>Rules</h2>
-            <ul>
-                <li>Rock beats Scissors</li>
-                <li>Paper beats Rock</li>
-                <li> Scissors beats Paper</li>
-            </ul>    
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Paper and Rock</title>
+        <script src="script.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h3> ROCK PAPER SCISSOR GAME </h3>
+        <div class="info">
+            <div class="rules">
+                <h2>Rules</h2>
+                <ul>
+                    <li>Rock beats Scissors</li>
+                    <li>Paper beats Rock</li>
+                    <li> Scissors beats Paper</li>
+                </ul>
+            </div>
+
+            <div class="playButtons">
+                <div class="playButton">
+                    <button class="rockBtn"> ROCK </button>
+                    <img src="images/rock.png" Id="rockImg" alt="Image of rock">
+                </div>
+
+                <div class="playButton">
+                    <button class="paperBtn"> PAPER </button>
+                        <img src="images/paper.png"  Id="paperImg" alt="Image of paper">
+                </div>
+
+                <div class="playButton">
+                    <button class="scissorsBtn"> SCISSORS </button>
+                    <img src="images/scissors.png" Id="scissorsImg" alt="Image of scissors">
+                </div>
+
+            </div>
         </div>
-        <div class="playButtons">
-            <button class="rockBtn"> ROCK
-                <img src="images/rock.png" alt="Image of rock">
-            </button>
-            <button class="paperBtn"> PAPER
-                <img src="images/paper.png" alt="Image of paper">
-            </button>
-            <button class="scissorsBtn"> SCISSORS
-                <img src="images/scissors.png" alt="Image of scissors">
-            </button>   
+        <div class="results">
+            <div class="score">
+                <p id="playerScore"></p>
+                <p id="computerScore"></p>
+            </div>
         </div>
-    </div>
-    <div class="results">
-        <div class="score">
-            <p id="playerScore"></p>
-            <p id="computerScore"></p>
-        </div>
-    </div>
-</body>
+    </body>
+
 </html>

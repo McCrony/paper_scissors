@@ -8,6 +8,9 @@ let computerSelection;
 const rock = document.querySelector(".rockBtn");
 const paper = document.querySelector('.paperBtn');
 const scissors = document.querySelector('.scissorsBtn');
+const rockImg = document.querySelector('#rockImg')
+const paperImg = document.querySelector('#paperImg')
+const scissorsImg = document.querySelector('#scissorsImg')
 const infoDiv = document.querySelector('.info');
 const displayParagraph = document.createElement('p');
 const compScore = document.querySelector('#computerScore');
@@ -23,14 +26,32 @@ rock.addEventListener('click', () => {
     game();
     playCounter++;
 });
+rockImg.addEventListener('click', () => {
+    playerSelection = "ROCK"
+    // getResults();
+    game();
+    playCounter++;
+});
+
+
 
 paper.addEventListener('click', () => {
     playerSelection = "PAPER";
     game();
     playCounter++;
 })
+paperImg.addEventListener('click', () => {
+    playerSelection = "PAPER";
+    game();
+    playCounter++;
+})
 
 scissors.addEventListener('click', () => {
+    playerSelection = "SCISSORS";
+    game();
+    playCounter++;
+})
+scissorsImg.addEventListener('click', () => {
     playerSelection = "SCISSORS";
     game();
     playCounter++;
